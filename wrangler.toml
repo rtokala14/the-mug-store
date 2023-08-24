@@ -13,3 +13,5 @@ compatibility_date = "2023-04-20"
 
 [vars]
 TURSO_DB_URL = "libsql://th-mug-store-rtokala14.turso.io"
+
+ITEMS_PER_PAGE=20
