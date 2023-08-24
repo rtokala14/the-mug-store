@@ -1,21 +1,10 @@
-import type {
-  LoaderArgs,
-  LoaderFunction,
-  V2_MetaFunction,
-} from "@remix-run/cloudflare";
+import type { LoaderArgs, LoaderFunction } from "@remix-run/cloudflare";
 import type { Category, Product } from "~/lib/types";
 
 import { useLoaderData } from "@remix-run/react";
 import { buildDbClient } from "~/lib/client";
 import { ProductCard } from "~/components/Product";
 import { resizeImage } from "~/lib/utils";
-
-export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "The Mug Store" },
-    { name: "description", content: "Welcome to the Mug store!" },
-  ];
-};
 
 export const loader: LoaderFunction = async ({ context }: LoaderArgs) => {
   const db = buildDbClient(context);
