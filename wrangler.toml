@@ -10,3 +10,6 @@ compatibility_date = "2023-04-20"
 
 [build]
   command = "npm run build"
+
+[vars]
+TURSO_DB_URL = "libsql://th-mug-store-rtokala14.turso.io"
