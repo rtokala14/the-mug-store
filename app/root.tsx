@@ -10,6 +10,8 @@ import {
 } from "@remix-run/react";
 
 import styles from "./globals.css";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -26,7 +28,17 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <div className="page">
+          <main className="flex flex-col flex-grow min-h-[90vh]">
+            <Header />
+            <Outlet />
+          </main>
+          <div className="section dark">
+            <div className="container">
+              <Footer />
+            </div>
+          </div>
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
